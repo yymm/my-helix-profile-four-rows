@@ -1,9 +1,10 @@
 # yymm's Helix Layout for four rows
 
-QMK commit latest: [16d6fd6e8](https://github.com/qmk/qmk_firmware/commit/16d6fd6e8ec8e6423b600459298797c2f14f9647)
+QMK commit latest(2018-09-06): 7f7c278
 
 ## Layout
 
+QWERTY
 ```
  ,------------------------------------------.                  ,-----------------------------------------.
  | ESC   |   Q  |   W  |   E  |   R  |   T  |                  |   Y  |   U  |   I  |   O  |   P  |  -_  |
@@ -16,6 +17,20 @@ QMK commit latest: [16d6fd6e8](https://github.com/qmk/qmk_firmware/commit/16d6fd
  `-------------------------------------------------------------------------------------------------------'
 ```
 
+EUCALYN
+```
+ ,------------------------------------------.                  ,-----------------------------------------.
+ | ESC   |   Q  |   W  |   ,  |   .  |   ;  |                  |   M  |   R  |   D  |   Y  |   P  |  -_  |
+ |-------+------+------+------+------+------|                  |------+------+------+------+------+------|
+ |Tab/Ctl|   A  |   O  |   E  |   I  |   U  |                  |   G  |   T  |   K  |   S  |   N  |  '"  |
+ |-------+------+------+------+------+------|                  |------+------+------+------+------+------|
+ | Shift |   Z  |   X  |   C  |   V  |   F  |                  |   B  |   H  |   J  |   L  |   /  |  \|  |
+ |-------+------+------+------+------+------+-----------+------+------+------+------+------+------|------|
+ | ADJUST|      |      |      | Alt  |Raise |Space/Lower| Bksp |Enter | GUI  |      |      |      |      |
+ `-------------------------------------------------------------------------------------------------------'
+
+```
+
 ## Layers
 
 |Priority|number|name|description|
@@ -23,16 +38,16 @@ QMK commit latest: [16d6fd6e8](https://github.com/qmk/qmk_firmware/commit/16d6fd
 |high|16|Adjust|Functions|
 ||4|Raise|Numeric charactors|
 ||3|Lower|Other charactors|
-|low|0|Qwerty|QWERTY leyout(base)|
+|low|0|Qwerty|QWERTY layout(base)|
 
 ### Lower
 ```
  ,-----------------------------------------.             ,-----------------------------------------.
- |      |   1  |   2  |   3  |   4  |   5  |             |   6  |   7  |   8  |   9  |   0  |  +=  |
+ |      |   1  |   2  |   3  |   4  |   5  |             |   6  |   7  |   8  |   9  |   0  |      |
  |------+------+------+------+------+------|             |------+------+------+------+------+------|
- | MS_WU| MS_WD| MS_LT| MS_UP| MS_DN| MS_RT|             | LEFT | DOWN |  UP  | RGHT |      |  ~`  |
+ |      |      |      |      |      |  =+  |             |  `~  |      |  UP  |      |      |      |
  |------+------+------+------+------+------|             |------+------+------+------+------+------|
- |      |      |      |      | MS_RC| MS_CL|             |      |      |      |      |  [{  |  ]}  |
+ |      |      |      |      |      |  [{  |             |  }]  | LEFT | DOWN | RGHT |      |      |
  |------+------+------+------+------+------+-------------+------+------+------+------+------+------|
  |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
  `-------------------------------------------------------------------------------------------------'
@@ -41,7 +56,7 @@ QMK commit latest: [16d6fd6e8](https://github.com/qmk/qmk_firmware/commit/16d6fd
 ### Raise
 ```
  ,-----------------------------------------.             ,-----------------------------------------.
- | F11  |  F1  |  F2  |  F3  |  F4  |  F5  |             |  F6  |  F7  |  F8  |  F9  | F10  | F12  |
+ |      |   !  |   @  |   #  |   $  |   %  |             |   ^  |   &  |   *  |   (  |   )  |      |
  |------+------+------+------+------+------|             |------+------+------+------+------+------|
  |      |      |      |      |      |      |             | MS_LT| MS_DN| MS_UP| MS_RT| MS_WU| MS_WD|
  |------+------+------+------+------+------|             |------+------+------+------+------+------|
@@ -53,25 +68,23 @@ QMK commit latest: [16d6fd6e8](https://github.com/qmk/qmk_firmware/commit/16d6fd
 
 ### Adjust (Lower + Raise)
 ```
- ,-----------------------------------------.             ,-----------------------------------------.
- |      | Reset|RGBRST|      |      | Mac  |             | Win  |      |Qwerty|Colemk|Dvorak|      |
- |------+------+------+------+------+------|             |------+------+------+------+------+------|
- |      |      |      |Aud on|Audoff|      |             |      |      |RGB ON| HUE+ | SAT+ | VAL+ |
- |------+------+------+------+------+------|             |------+------+------+------+------+------|
- |      |      | Next | Vol- | Vol+ | Play |             |      |      | MODE | HUE- | SAT- | VAL- |
- |------+------+------+------+------+------+-------------+------+------+------+------+------+------|
- |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
- `-------------------------------------------------------------------------------------------------'
+ ,-----------------------------------------.             ,------------------------------------------.
+ |      | Reset|      |      |      | Mac  |             | Win  |      |Qwerty|Eucalyn|Dvorak|      |
+ |------+------+------+------+------+------|             |------+------+------+-------+------+------|
+ |      |      |      |Aud on|Audoff|      |             |      |RGB ON| MODE+| HUE+  | SAT+ | VAL+ |
+ |------+------+------+------+------+------|             |------+------+------+-------+------+------|
+ |      |      | Next | Vol- | Vol+ | Play |             |      |RGBRST| MODE-| HUE-  | SAT- | VAL- |
+ |------+------+------+------+------+------+-------------+------+------+------+-------+------+------|
+ |      |  F1  |  F2  |  F3  |  F4  |  F5  |  F11 |  F12 |  F6  |  F7  |  F8  |  F9   |  F10 |      |
+ `--------------------------------------------------------------------------------------------------'
 ```
 
 ## Customize
 
 see `rules.mk`
-
 ```
 # Helix keyboard customize
 # you can edit follows 7 Variables
-#  jp: 以下の7つの変数を必要に応じて編集します。
 HELIX_ROWS = 4              # Helix Rows is 4 or 5
 OLED_ENABLE = yes           # OLED_ENABLE
 LOCAL_GLCDFONT = yes        # use each keymaps "helixfont.h" insted of "common/glcdfont.c"
@@ -105,20 +118,15 @@ see `config.h`
 go to qmk top directory.
 ```
 $ cd qmk_firmware
-$ git clone https://github.com/yymm/my-helix-profile-four-rows keyborads/helix/rev2/four_rows
+$ git clone https://github.com/yymm/my-helix-profile-four-rows
 ```
 
 build
 ```
-$ make helix:four_rows
+$ make helix:my-helix-profile-four-rows
 ```
 
 flash to keyboard
 ```
 $ make helix:four_rows:avrdude
 ```
-
-## Link
-* more detail wrote in Japanese [helix/Doc/firmware_jp.md](https://github.com/MakotoKurauchi/helix/blob/master/Doc/firmware_jp.md)
-* [Helix top](https://github.com/MakotoKurauchi/helix)
-
